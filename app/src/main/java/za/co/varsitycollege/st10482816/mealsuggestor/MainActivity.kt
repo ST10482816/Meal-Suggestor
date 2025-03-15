@@ -71,7 +71,12 @@ class MainActivity : AppCompatActivity() {
 
 //    function resets fields when called
     private fun resetInputFields(timeOfDay: EditText, txtSuggestionResult: TextView){
-        timeOfDay.text.clear()
-        txtSuggestionResult.text = ""
+        try {
+            timeOfDay.text.clear()
+            txtSuggestionResult.text = ""
+        }  catch (e: Exception){
+            Log.e("reset Button Function", "Error resetting fields: ${e.message}")
+        }
+
     }
 }
