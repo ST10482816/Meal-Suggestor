@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 //      Buttons
-        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val btnGenerateMeal = findViewById<Button>(R.id.btnGenerateMeal)
         val btnReset = findViewById<Button>(R.id.btnReset)
 //      Text Fields (Edit & View)
         var txtSuggestionResult = findViewById<TextView>(R.id.txtSuggestionResult)
         var timeOfDay = findViewById<EditText>(R.id.txeTimeOfDay)
 
-        btnSubmit.setOnClickListener{
-
+//      Generate Meal Button Listener
+        btnGenerateMeal.setOnClickListener{
 //          checks if user input is not blank nor whitespaces
             if (timeOfDay.text.isNotBlank()) {
                 try {
@@ -39,23 +39,25 @@ class MainActivity : AppCompatActivity() {
 
                     txtSuggestionResult.text = timeOfDayText
                     println("btnSubmit: " + timeOfDayText)
+//                  Calls GenerateMeal Function
                     generateMeal(timeOfDayText)
                 } catch (e: Exception){
 //                  Logs the error in console
                     Log.e("btnSubmit", "Error:  ${e.message}")
 
-//                  Displays error message to user
+//                  Displays error message to user if they don't have correct time of day chosen out of instructions
                     Toast.makeText(this, "Make sure you chose an appropriate time of day", Toast.LENGTH_SHORT).show()
-//                  resetInputFields(timeOfDay, txtSuggestionResult)
                 }
+            } else {
+//              Displays message to user if they click on Generate Meal button if it is empty or has only whitespaces
+                Toast.makeText(this, "The input cannot be left empty or whitespaces only", Toast.LENGTH_SHORT).show()
             }
 
         }
 
-//        Reset Fields Button
+//        Reset Fields Button Listener; calls resetInputFunctions
         btnReset.setOnClickListener {
             resetInputFields(timeOfDay, txtSuggestionResult)
-
         }
 
 
@@ -72,10 +74,12 @@ class MainActivity : AppCompatActivity() {
 //    function resets fields when called
     private fun resetInputFields(timeOfDay: EditText, txtSuggestionResult: TextView){
         try {
+//            clears both timeOfDay input text and the SuggestionResult text
             timeOfDay.text.clear()
             txtSuggestionResult.text = ""
         }  catch (e: Exception){
-            Toast.makeText(this, "Something went wrong when trying to reset the time of day and/or meal suggestion zone", Toast.LENGTH_SHORT).show()
+//            Displays potential error to user
+            Toast.makeText(this, "Something went wrong when trying to reset the time of day and/or meal suggestion zone. Please try again, if it continues report this to the bugtracker.", Toast.LENGTH_SHORT).show()
             Log.e("reset Button Function", "Error resetting fields: ${e.message}")
         }
 
