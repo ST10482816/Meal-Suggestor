@@ -37,8 +37,7 @@ class MainActivity : AppCompatActivity() {
 //              tries to stringify user input and store in timeOfDayText variable
                     var timeOfDayText = timeOfDay.text.toString()
 
-                    txtSuggestionResult.text = timeOfDayText
-                    println("btnSubmit: " + timeOfDayText)
+//                    txtSuggestionResult.text = timeOfDayText
 //                  Calls GenerateMeal Function
                     generateMeal(timeOfDayText)
                 } catch (e: Exception){
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-//        Reset Fields Button Listener; calls resetInputFunctions
+//      Reset Fields Button Listener; calls resetInputFunctions
         btnReset.setOnClickListener {
             resetInputFields(timeOfDay, txtSuggestionResult)
         }
@@ -66,9 +65,17 @@ class MainActivity : AppCompatActivity() {
 
 
 //    function generates a meal based on the user's chosen input
-    private fun generateMeal(timeOfDayText: String){
-        Log.i("MainActivity", "Time of day text: $timeOfDayText")
-        println("Generate Meal: " + timeOfDayText)
+    private fun generateMeal(timeOfDayText: String): String {
+            val suggestedMeal = when (timeOfDayText.uppercase()) {
+                "MORNING" -> ""
+                "MID-MORNING" -> ""
+                "AFTERNOON" -> ""
+                "AFTERNOON" -> ""
+                "AFTERNOON SNACK" -> ""
+                "DINNER" -> ""
+                else -> "The time of day you entered is not available, please choose one of the options listed above."
+            }
+            return suggestedMeal
     }
 
 //    function resets fields when called
