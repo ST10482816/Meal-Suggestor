@@ -42,11 +42,11 @@
             android:text="Generate Meal" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnReset"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Reset" />
     </LinearLayout>
 
     <TextView
@@ -54,5 +54,10 @@
         android:layout_width="match_parent"
         android:layout_height="87dp"
         android:text="" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
