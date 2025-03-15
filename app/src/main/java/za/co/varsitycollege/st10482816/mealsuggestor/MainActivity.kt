@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener{
 
-//            var timeOfDayText = timeOfDay.text.toString()
-
 //          checks if user input is not blank nor whitespaces
             if (timeOfDay.text.isNotBlank()) {
                 try {
@@ -38,7 +36,8 @@ class MainActivity : AppCompatActivity() {
                     var timeOfDayText = timeOfDay.text.toString()
 
                     txtSuggestionResult.text = timeOfDayText
-
+                    println("btnSubmit: " + timeOfDayText)
+                    generateMeal(timeOfDayText)
                 } catch (e: Exception){
 //                  Logs the error in console
                     Log.e("btnSubmit", "Error:  ${e.message}")
@@ -49,10 +48,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-
-
-//
-
         }
 
 
@@ -62,8 +57,10 @@ class MainActivity : AppCompatActivity() {
 
 
 //    function generates a meal based on the user's chosen input
-    private fun generateMeal(){
-
+    private fun generateMeal(timeOfDayText: String){
+//        Log.i("MainActivity", "generateMeal function working")
+        Log.i("MainActivity", "Time of day text: $timeOfDayText")
+        println("Generate Meal: " + timeOfDayText)
     }
 
 //    function resets fields when called
