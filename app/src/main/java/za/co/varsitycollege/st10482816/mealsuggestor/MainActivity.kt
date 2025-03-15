@@ -39,7 +39,12 @@ class MainActivity : AppCompatActivity() {
 
 //                    txtSuggestionResult.text = timeOfDayText
 //                  Calls GenerateMeal Function
-                    generateMeal(timeOfDayText)
+                    val suggestedMeal = generateMeal(timeOfDayText)
+                    if (suggestedMeal == "invalid selection"){
+                        Toast.makeText(this, "Please choose one of the options listed above.", Toast.LENGTH_SHORT).show()
+                    } else {
+                        txtSuggestionResult.text = suggestedMeal
+                    }
                 } catch (e: Exception){
 //                  Logs the error in console
                     Log.e("btnSubmit", "Error:  ${e.message}")
@@ -66,14 +71,14 @@ class MainActivity : AppCompatActivity() {
 
 //    function generates a meal based on the user's chosen input
     private fun generateMeal(timeOfDayText: String): String {
-            val suggestedMeal = when (timeOfDayText.uppercase()) {
-                "MORNING" -> ""
-                "MID-MORNING" -> ""
-                "AFTERNOON" -> ""
-                "AFTERNOON" -> ""
-                "AFTERNOON SNACK" -> ""
-                "DINNER" -> ""
-                else -> "The time of day you entered is not available, please choose one of the options listed above."
+            val suggestedMeal: String = when (timeOfDayText.uppercase()) {
+                "MORNING" -> "Banana"
+                "MID-MORNING" -> "Egg"
+                "AFTERNOON" -> "Chicken"
+                "AFTERNOON SNACK" -> "Protein Shake"
+                "DINNER" -> "Beef"
+                else -> {
+                "invalid selection"}
             }
             return suggestedMeal
     }
