@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
+//      Buttons
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val btnReset = findViewById<Button>(R.id.btnReset)
+//      Text Fields (Edit & View)
         var txtSuggestionResult = findViewById<TextView>(R.id.txtSuggestionResult)
         var timeOfDay = findViewById<EditText>(R.id.txeTimeOfDay)
 
@@ -50,6 +52,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+//        Reset Fields Button
+        btnReset.setOnClickListener {
+            resetInputFields(timeOfDay, txtSuggestionResult)
+
+        }
 
 
     }
@@ -58,14 +65,13 @@ class MainActivity : AppCompatActivity() {
 
 //    function generates a meal based on the user's chosen input
     private fun generateMeal(timeOfDayText: String){
-//        Log.i("MainActivity", "generateMeal function working")
         Log.i("MainActivity", "Time of day text: $timeOfDayText")
         println("Generate Meal: " + timeOfDayText)
     }
 
 //    function resets fields when called
-    private fun resetInputFields(timeOfDay: String, txtSuggestionResult: String){
-//        timeOfDay.text = ""
-//        txtSuggestionResult.text = ""
+    private fun resetInputFields(timeOfDay: EditText, txtSuggestionResult: TextView){
+        timeOfDay.text.clear()
+        txtSuggestionResult.text = ""
     }
 }
