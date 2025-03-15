@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             timeOfDay.text.clear()
             txtSuggestionResult.text = ""
         }  catch (e: Exception){
+            Toast.makeText(this, "Something went wrong when trying to reset the time of day and/or meal suggestion zone", Toast.LENGTH_SHORT).show()
             Log.e("reset Button Function", "Error resetting fields: ${e.message}")
         }
 
