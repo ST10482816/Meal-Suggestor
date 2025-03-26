@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 //              tries to stringify user input and store in timeOfDayText variable
                     var timeOfDayText = timeOfDay.text.toString()
 
-//                    txtSuggestionResult.text = timeOfDayText
 //                  Calls GenerateMeal Function
                     val suggestedMeal = generateMeal(timeOfDayText)
                     if (suggestedMeal == "invalid selection"){
@@ -72,11 +71,11 @@ class MainActivity : AppCompatActivity() {
 //    function generates a meal based on the user's chosen input
     private fun generateMeal(timeOfDayText: String): String {
             val suggestedMeal: String = when (timeOfDayText.uppercase()) {
-                "MORNING" -> "Banana"
-                "MID-MORNING" -> "Egg"
-                "AFTERNOON" -> "Chicken"
+                "MORNING" -> "3-6 Egg Omelette"
+                "MID-MORNING" -> "1x Large Banana \n 20g Roasted & Salted Cashew Nuts"
+                "AFTERNOON" -> " Chicken, Rice & Broccoli"
                 "AFTERNOON SNACK" -> "Protein Shake"
-                "DINNER" -> "Beef"
+                "DINNER" -> "Grilled Beef Steak, Roasted Potatoes and Steamed Vegetables"
                 else -> {
                 "invalid selection"}
             }
