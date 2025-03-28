@@ -70,6 +70,7 @@ Error Feedback
 
 
 ## YouTube Link
-Watch a demonstration of the application usage below
+
 [![Watch Demo](https://img.shields.io/badge/Watch_Demo-FF6F61?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/m8LhsTG_i7Y)
+Watch a demonstration of the application usage 
 
