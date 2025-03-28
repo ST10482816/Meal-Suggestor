@@ -1,0 +1,26 @@
+name: Android Build
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout app repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java Development Kit 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu' 
+          java-version: 17
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build app with Gradle
+        run: ./gradlew assembleDebug
