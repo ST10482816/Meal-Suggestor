@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Please choose one of the options listed above.", Toast.LENGTH_SHORT).show()
                     } else {
                         txtSuggestionResult.text = suggestedMeal
+                        // Set overlay background when suggestion is displayed
+                        txtSuggestionResult.setBackgroundResource(R.color.suggestion_overlay)
                     }
                 } catch (e: Exception){
 //                  Logs the error in console
@@ -71,10 +73,10 @@ class MainActivity : AppCompatActivity() {
 //    function generates a meal based on the user's chosen input
     private fun generateMeal(timeOfDayText: String): String {
             val suggestedMeal: String = when (timeOfDayText.uppercase()) {
-                "MORNING" -> "3-6 Egg Omelette"
-                "MID-MORNING" -> "1x Large Banana \n 20g Roasted & Salted Cashew Nuts"
+                "MORNING" -> "Egg Omelette"
+                "MID-MORNING" -> "Banana, Roasted & Salted Cashew Nuts"
                 "AFTERNOON" -> " Chicken, Rice & Broccoli"
-                "AFTERNOON SNACK" -> "Protein Shake"
+                "AFTERNOON SNACK" -> "Protein Shake or Biltong"
                 "DINNER" -> "Grilled Beef Steak, Roasted Potatoes and Steamed Vegetables"
                 else -> {
                 "invalid selection"}
@@ -88,6 +90,7 @@ class MainActivity : AppCompatActivity() {
 //            clears both timeOfDay input text and the SuggestionResult text
             timeOfDay.text.clear()
             txtSuggestionResult.text = ""
+            txtSuggestionResult.setBackgroundResource(android.R.color.transparent)
         }  catch (e: Exception){
 //            Displays potential error to user
             Toast.makeText(this, "Something went wrong when trying to reset the time of day and/or meal suggestion zone. Please try again, if it continues report this to the bugtracker.", Toast.LENGTH_SHORT).show()

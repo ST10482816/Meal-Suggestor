@@ -1,89 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFF5E1"
     tools:context=".MainActivity">
 
-<!-- Heading -->
-    <TextView
-        android:id="@+id/txtHeadingInstruction"
+    <!-- Background Image with scaling and opacity -->
+    <ImageView
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="8dp"
-        android:paddingBottom="16dp"
-        android:textColor="@color/text_primary"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Choose your time of day for meal suggestion" />
-<!-- Options -->
-    <TextView
-        android:id="@+id/txtDayOptions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingHorizontal="10dp"
-        android:paddingBottom="16dp"
-        android:text='"Morning", \n "Mid-morning", \n "Afternoon", \n "Mid-afternoon" \n or "Dinner"'
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp" />
-<!--Time of Day Input Field-->
-    <EditText
-        android:id="@+id/txeTimeOfDay"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:ems="10"
-        android:paddingHorizontal="10dp"
-        android:hint="Time of Day"
-        android:inputType="text" />
+        android:layout_height="match_parent"
+        android:src="@drawable/background_image"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" /> <!-- 40% opacity for a faded effect -->
 
-<!-- Suggestion Field Output -->
-    <TextView
-        android:id="@+id/txtSuggestionResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/highlight_peach"
-        android:text=""
-        android:textColor="@color/text_primary"
-        android:textSize="16sp"
-        />
-
-<!-- Button Row -->
+    <!-- Your LinearLayout with components -->
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="16dp"
-        android:gravity="center"
-        android:paddingHorizontal="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/btnGenerateMeal"
-            android:layout_width="0dp"
+        <!-- Heading -->
+        <TextView
+            android:id="@+id/txtHeadingInstruction"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:backgroundTint="@color/accent_coral"
-            android:text="Generate Meal"
-            android:textColor="#FFFFFF" />
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:text="Choose your time of day for meal suggestion" />
 
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="0dp"
+        <!-- Options -->
+        <TextView
+            android:id="@+id/txtDayOptions"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:backgroundTint="#757575"
-            android:text="Reset"
-            android:textColor="#FFFFFF"/>
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="16dp"
+            android:text='"Morning", "Mid-morning", \n "Afternoon", "Mid-afternoon" \n or "Dinner"'
+            android:textColor="@color/text_secondary"
+            android:background="@color/options_background"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="15dp"
+            android:textSize="14sp" />
+
+        <!-- Time of Day Input Field -->
+        <EditText
+            android:id="@+id/txeTimeOfDay"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:ems="10"
+            android:paddingHorizontal="10dp"
+            android:background="@color/input_background"
+            android:hint="Time of Day"
+            android:fontFamily="sans-serif-medium"
+            android:inputType="text" />
+
+        <!-- Suggestion Field Output -->
+        <TextView
+            android:id="@+id/txtSuggestionResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- Button Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp">
+
+            <Button
+                android:id="@+id/btnGenerateMeal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/accent_coral"
+                android:text="Generate Meal"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#757575"
+                android:text="Reset"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</FrameLayout>
