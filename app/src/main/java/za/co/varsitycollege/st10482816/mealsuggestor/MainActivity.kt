@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 "MORNING" -> "Egg Omelette"
                 "MID-MORNING" -> "Banana, Roasted & Salted Cashew Nuts"
                 "AFTERNOON" -> " Chicken, Rice & Broccoli"
-                "AFTERNOON SNACK" -> "Protein Shake or Biltong"
+                "AFTERNOON SNACK" -> "Protein Shake and/or Biltong"
                 "DINNER" -> "Grilled Beef Steak, Roasted Potatoes and Steamed Vegetables"
                 else -> {
                 "invalid selection"}

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Core Colors -->
+    <!-- Main Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#1A3C34</color> <!-- Deep Teal (inspired by spinach/herbs) -->
-    <color name="text_secondary">#4A635D</color> <!-- Muted Teal (softer contrast) -->
+    <color name="text_primary">#1A3C34</color> <!-- Deep Teal -->
+    <color name="text_secondary">#4A635D</color> <!-- Muted Teal -->
 
     <!-- UI Elements -->
-    <color name="accent_coral">#FF5733</color> <!-- Bright Coral (tomato-inspired) -->
-    <color name="highlight_peach">#FFDAB9</color> <!-- Peach (carrot/peach tones) -->
-    <color name="neutral_gray">#5D4037</color> <!-- Brown-Gray (wood-like, for Reset) -->
-    <color name="options_background">#A3F5F5F5</color> <!-- Creamy Off-White (light base) -->
-    <color name="input_background">#BCF5F5F5</color> <!-- Creamy Off-White (light base) -->
+    <color name="accent_coral">#FF5733</color> <!-- Bright Coral  -->
+    <color name="highlight_peach">#FFDAB9</color> <!-- Peach -->
+    <color name="neutral_gray">#5D4037</color> <!--  Reset -->
+
+<!--    Semi-transparent backgrounds for input and text displays -->
+    <color name="options_background">#A3F5F5F5</color>
+    <color name="input_background">#BCF5F5F5</color>
 
     <!-- txtSuggestionResult Background Overlay -->
     <color name="suggestion_overlay">#CCF5F5F5</color> <!-- 80% opacity light gray -->

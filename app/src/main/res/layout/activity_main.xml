@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Background Image with scaling and opacity -->
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/background_image"
         android:scaleType="centerCrop"
-        android:alpha="0.4" /> <!-- 40% opacity for a faded effect -->
+        android:alpha="0.4" /> <!-- opacity -->
 
-    <!-- Your LinearLayout with components -->
+
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
